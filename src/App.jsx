@@ -4,6 +4,7 @@ import { Center, SimpleGrid, Box } from "@chakra-ui/react";
 import RecipePage from "./pages/RecipePage";
 import { useState } from "react";
 import { Header } from "./components/Header";
+import Footer from "./components/Footer";
 export const App = () => {
   const [selectedItem, setSelectedItem] = useState();
 
@@ -12,8 +13,8 @@ export const App = () => {
   return (
     <Header>
       <Box w="100%" h="100%">
-        <Center bgColor="blue.500">
-          <SimpleGrid w="80%">
+        <Center>
+          <SimpleGrid w="100%">
             {selectedItem ? (
               <RecipePage recipes={selectedItem} clickFn={setSelectedItem} />
             ) : (
@@ -22,6 +23,7 @@ export const App = () => {
           </SimpleGrid>
         </Center>
       </Box>
+      <Footer />
     </Header>
   );
 };
