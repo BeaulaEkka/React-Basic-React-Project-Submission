@@ -12,6 +12,7 @@ import {
   Heading,
   Tag,
   Badge,
+  IconButton,
 } from "@chakra-ui/react";
 
 import { ChevronLeftIcon } from "@chakra-ui/icons";
@@ -34,7 +35,7 @@ const RecipePage = ({ recipes, clickFn }) => {
                 src={recipes.image}
                 alt={recipes.label}
                 w="100%"
-                h="250px"
+                h="350px"
                 objectFit="cover"
                 overflow="hidden"
               />
@@ -65,7 +66,7 @@ const RecipePage = ({ recipes, clickFn }) => {
                         <Text key={ingredientLine}>{ingredientLine}</Text>
                       ))}
                     </Text>
-                    <Button
+                    {/* <Button
                       mt="2rem"
                       pb="0.2rem"
                       pl="0.3rem"
@@ -76,7 +77,7 @@ const RecipePage = ({ recipes, clickFn }) => {
                     >
                       <ChevronLeftIcon fontSize={25} />
                       Back to Overview
-                    </Button>
+                    </Button> */}
                   </Box>
                   <Spacer />
                   <Box w="50%" p=".5rem">
@@ -244,7 +245,7 @@ const RecipePage = ({ recipes, clickFn }) => {
                     </Flex>
                   </Box>
                 </Flex>
-                {/* <Button
+                <Button
                   pb="0.2rem"
                   pl=".5rem"
                   bg="blue.500"
@@ -261,7 +262,7 @@ const RecipePage = ({ recipes, clickFn }) => {
                     color="white"
                   />
                   Back to overview
-                </Button> */}
+                </Button>
               </Stack>
             </CardBody>
           </Card>
