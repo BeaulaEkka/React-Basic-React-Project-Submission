@@ -45,6 +45,7 @@ Overall, this project expanded my knowledge and skills in React development. It 
 
 # Screenshot
 
+![Winc Screenshots](./public/myScreenShots/mockup2.jpg)
 ![Winc Recipes App](./public/myScreenShots/Animation.gif)
 
 # Links
