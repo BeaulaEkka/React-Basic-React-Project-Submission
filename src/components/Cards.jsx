@@ -1,5 +1,19 @@
 import { Image, Text, CardHeader, CardBody, Card, Tag } from "@chakra-ui/react";
+import { Suspense } from "react";
 
+const LazyImage = ({ src, alt }) => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Image
+      src={src}
+      alt={alt}
+      w="550px"
+      h="260px"
+      m="0"
+      p="0"
+      objectFit="cover"
+    />
+  </Suspense>
+);
 export default function Cards({ recipe, clickFn }) {
   const handleClick = () => {
     clickFn(recipe);
@@ -16,15 +30,7 @@ export default function Cards({ recipe, clickFn }) {
       _hover={{ transform: "scale(1.03)" }}
     >
       <CardHeader m="0" p="0">
-        <Image
-          src={recipe.image}
-          alt={recipe.label}
-          w="550px"
-          h="260px"
-          m="0"
-          p="0"
-          objectFit="cover"
-        />{" "}
+        <LazyImage src={recipe.image} alt={recipe.label} />
       </CardHeader>
 
       <CardBody textAlign="center">
