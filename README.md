@@ -45,6 +45,8 @@ Overall, this project expanded my knowledge and skills in React development. It 
 
 # Screenshot
 
+![Winc Recipes App](./public/myScreenShots/Animation.gif)
+
 # Links
 
 # My Process
