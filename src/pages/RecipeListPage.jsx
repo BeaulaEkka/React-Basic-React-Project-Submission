@@ -17,6 +17,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
 
     return text.toLowerCase().includes(searchField.toLowerCase());
   });
+
   const handleSearchChanges = (event) => {
     return setSearchField(event.target.value);
   };

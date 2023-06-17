@@ -17,6 +17,7 @@ const LazyImage = ({ src, alt }) => (
 export default function Cards({ recipe, clickFn }) {
   const handleClick = () => {
     clickFn(recipe);
+    window.scrollTo(0, 0);
   };
 
   return (
