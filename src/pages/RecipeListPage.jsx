@@ -37,7 +37,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
             />
           </Box>
         </Box>
-        <Box position="absolute" top="12rem" left="25%" w="60%">
+        <Box position="absolute" top="12rem" left="20%" w="60%">
           <Center>
             <Heading size="lg" mb="1rem" color={"green.800"}>
               Find a Recipe
