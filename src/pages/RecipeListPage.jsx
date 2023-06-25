@@ -9,6 +9,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Cards from "../components/Cards";
+
 export const RecipeListPage = ({ recipes, clickFn }) => {
   const [searchField, setSearchField] = useState("");
 
@@ -19,7 +20,35 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
   });
 
   const handleSearchChanges = (event) => {
-    return setSearchField(event.target.value);
+    setSearchField(event.target.value);
+  };
+
+  const renderRecipes = () => {
+    if (filteredRecipes.length === 0) {
+      return (
+        <VStack>
+          <Heading size="md">No recipes found for {searchField}</Heading>
+          <Image
+            src="https://images.pexels.com/photos/10455982/pexels-photo-10455982.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="pizza"
+            objectFit="cover"
+            w="100%"
+            h="30rem"
+            mt="3rem"
+            mb="3rem"
+          />
+        </VStack>
+      );
+    }
+
+    return filteredRecipes.map((recipe) => (
+      <Cards
+        clickFn={clickFn}
+        key={recipe.label}
+        recipe={recipe}
+        minHeight="250px"
+      />
+    ));
   };
 
   return (
@@ -39,7 +68,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
         </Box>
         <Box position="absolute" top="12rem" left="20%" w="60%">
           <Center>
-            <Heading size="lg" mb="1rem" color={"green.800"}>
+            <Heading size="lg" mb="1rem" color={"green.900"}>
               Find a Recipe
             </Heading>
           </Center>
@@ -58,14 +87,7 @@ export const RecipeListPage = ({ recipes, clickFn }) => {
           spacingX={5}
           w="80%"
         >
-          {filteredRecipes.map((recipe) => (
-            <Cards
-              clickFn={clickFn}
-              key={recipe.label}
-              recipe={recipe}
-              minHeight="250px"
-            />
-          ))}
+          {renderRecipes()}
         </SimpleGrid>
       </VStack>
     </Center>
